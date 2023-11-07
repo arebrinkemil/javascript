@@ -1,0 +1,49 @@
+#actorlist {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+#actor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+}
+
+body {
+  background: rgb(73, 88, 99);
+  background: linear-gradient(
+    135deg,
+    rgba(73, 88, 99, 1) 63%,
+    rgba(161, 79, 2, 1) 100%
+  );
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  color: white;
+}
+
+p {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 2rem;
+}

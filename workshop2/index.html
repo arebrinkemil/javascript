@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="controls">
+      <label for="sort">Sort by: </label>
+      <select id="sort">
+        <option value="title">Title</option>
+        <option value="author">Author</option>
+      </select>
+
+      <label for="filter">Filter by Title: </label>
+      <input type="text" id="filter" placeholder="Search for a book..." />
+    </div>
+
+    <div id="bookshelf"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
