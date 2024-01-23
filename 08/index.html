@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="emails"></ul>
+    <script>
+      const emails = [
+        "@",
+        "@sabatini.mr",
+        "alexandria@",
+        "blue.bandit",
+        "roy@walk.er",
+        "sisterevel.yn",
+        "walt@purdy",
+        "mail@mails.se",
+      ];
+
+      const validEmails = [];
+
+      emails.forEach((element) => {
+        checkemail(element);
+      });
+
+      function checkemail(email) {
+        if (validateEmail(email)) {
+          validEmails.push(email);
+        }
+      }
+
+      function validateEmail(email) {
+        const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+      validEmails.forEach((element) => {
+        const li = document.createElement("li");
+        li.textContent = element;
+        document.getElementById("emails").appendChild(li);
+      });
+    </script>
+  </body>
+</html>

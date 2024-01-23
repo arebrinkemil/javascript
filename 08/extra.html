@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input
+        type="text"
+        id="numberBet"
+        placeholder="Enter the number 6,7,8 or 9"
+      />
+
+      <input type="text" id="Name" placeholder="Enter Name" />
+    </form>
+
+    <button id="play">PLAY</button>
+
+    <script>
+      class Dices {
+        roll() {
+          return Math.floor(Math.random() * 6) + 1;
+        }
+      }
+
+      class Player {
+        constructor(name) {
+          this.name = name;
+          this.score = 0;
+        }
+
+        updateScore(points) {
+          this.score += points;
+        }
+      }
+
+      class Game {
+        constructor() {
+          this.players = [];
+          this.dices = new Dices();
+        }
+
+        addPlayer(name) {
+          const player = new Player(name);
+          this.players.push(player);
+        }
+
+        rollDices() {
+          return this.dices.roll() + this.dices.roll();
+        }
+
+        play(selectedNumber) {
+          const pcPoints = this.rollDices();
+          console.log("PC points: ", pcPoints);
+          if (pcPoints === selectedNumber) {
+            return true;
+          } else {
+            console.log("Game continues");
+            player.updateScore(pcPoints);
+            return false;
+          }
+        }
+      }
+
+      document.getElementById("play").addEventListener("click", function () {
+        const playerName = document.getElementById("Name").value;
+        const selectedNumber = parseInt(
+          document.getElementById("numberBet").value
+        );
+        const game = new Game();
+        game.addPlayer(playerName);
+
+        const gameOver = game.play(selectedNumber);
+        if (gameOver) {
+          console.log(playerName.score);
+          console.log("Game over");
+        } else {
+          console.log("Game continues");
+        }
+      });
+    </script>
+  </body>
+</html>
